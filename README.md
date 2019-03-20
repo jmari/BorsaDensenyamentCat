@@ -6,7 +6,7 @@ Aquesta pràctica és part de l’assignatura  de _Tipologia i cicle de vida de 
 L’objectiu és generar un Dataset  amb les dades de totes les Especialitat i Serveis territorials per tal d'obtenir informació més transversal que no es pot trobar a la web, com el nombre d'interins treballant, especialitats i zones amb més demanda, centres amb més estabilitat.
 ## Integrants del grup
 La pràctica es realitza  en grup integrat per **Victor Boix** i **Jesús Marí**.
-##Avaluació inicial
+## Avaluació inicial
 El fitxer robots.txt permet accedir a tots els rastrejadors.
 User-agent: * Disallow:
 ## Fitxers de codi font 
