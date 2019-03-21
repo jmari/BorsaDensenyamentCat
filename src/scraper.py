@@ -10,7 +10,6 @@ class WebScraper():
         
 
     def __download(self, url):
-        self.course_url = url
         print("Downloading", url, "...")
         r = requests.get(url)
 
@@ -33,11 +32,8 @@ class WebScraper():
         bs = BeautifulSoup(html, "html.parser")
         nodes_a = bs.find_all('a')
        
-
-
         links = []
         for node in nodes_a:
-
             if node.text != "cat" and '/ctot.php?e' in node['href']:
                 links.append(node['href'])
 
