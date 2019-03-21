@@ -7,8 +7,10 @@ class WebScraper():
 
     def __init__(self):
         self.url = "http://sindicat.net/borsa/"
+        
 
     def __download(self, url):
+        self.course_url = url
         print("Downloading", url, "...")
         r = requests.get(url)
 
@@ -29,7 +31,17 @@ class WebScraper():
     def __get_links_old(self, html):
         # captura els enllaços anteriors al 2015
         bs = BeautifulSoup(html, "html.parser")
-        # TODO
+        nodes_a = bs.find_all('a')
+       
+
+
+        links = []
+        for node in nodes_a:
+
+            if node.text != "cat" and '/ctot.php?e' in node['href']:
+                links.append(node['href'])
+
+        return links
 
 
     def scrape(self, course):
