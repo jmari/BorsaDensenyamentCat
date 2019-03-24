@@ -1,5 +1,6 @@
 import requests
 import re
+import time
 import csv
 from bs4 import BeautifulSoup
 
@@ -8,6 +9,7 @@ class WebScraper:
 
     def __init__(self):
         self.url = "http://sindicat.net/borsa/"
+        self.data = []
 
     def __download(self, url):
         print("Downloading", url, "...")
@@ -26,21 +28,37 @@ class WebScraper:
 
         return links
 
+    def __scrape_data(self, bs):
+        titles = bs.find_all('h1')
+        title = titles[1].text.split("-")
+        p = re.compile('SSTT|ESPECIALITAT|:|\s')
+        sstt = p.sub('', title[0])
+        esp = p.sub('', title[1])
+
+        table = bs.find('table')
+        for row in table.find_all('tr'):
+            data_row = [sstt, esp]
+            for i, cell in enumerate(row.find_all('td')[1:]):
+                data_row.append(cell.text)
+            self.data.append(data_row)
+
+    def __write_csv(self, filename):
+        with open("../data/" + filename, 'w', newline="") as csvfile:
+            w = csv.writer(csvfile, delimiter=";", quotechar="|", quoting=csv.QUOTE_MINIMAL)
+            for x in self.data:
+                w.writerow(x)
+
     def scrape(self, course):
         html = self.__download(self.url + course)
         links = self.__get_links(html)
 
-        for link in links[0:1]:  # Per capturar tots els enllaços treure l'slicing
+        for link in links[0:3]:  # Per capturar tots els enllaços treure l'slicing
+            t = time.time()
             html = self.__download(link)
             bs = BeautifulSoup(html, "html.parser")
+            self.__scrape_data(bs)
+            dt = time.time() - t
+            time.sleep(10 * dt)
 
-            # STT and ESP
-            titles = bs.find_all('h1')
-            title = titles[1].text.split("-")
-            p = re.compile('SSTT|ESPECIALITAT|:|\s')
-            sstt = p.sub('', title[0])
-            esp = p.sub('', title[1])
-
-            table = bs.find('table')
-            # TODO
+        self.__write_csv("dades" + course + ".csv")
 

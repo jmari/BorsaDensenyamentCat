@@ -2,5 +2,5 @@ from scraper import WebScraper
 
 ws = WebScraper()
 
-# Indicar el curs a capturar: 1516, 1617...
-ws.scrape("1314")
+# Indicar el curs a capturar entre 1314 i 1819
+ws.scrape("1819")
