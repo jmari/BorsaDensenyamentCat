@@ -27,6 +27,17 @@ class WebScraper:
                 links.append(node['href'])
 
         return links
+   
+
+    def __split_columns(self, index, text):
+        converter = lambda x: x.replace('\xa0',' ').replace('- FITXA','').strip(' ') 
+        if index == 0 or index == 1:
+            columns = text.rsplit(" ",2)
+            fields = [ converter(a_field) for a_field in columns]
+        else:
+            fields = [converter(text)]
+        return fields
+
 
     def __scrape_data(self, bs):
         titles = bs.find_all('h1')
@@ -38,8 +49,15 @@ class WebScraper:
         table = bs.find('table')
         for row in table.find_all('tr'):
             data_row = [sstt, esp]
-            for i, cell in enumerate(row.find_all('td')[1:]):
-                data_row.append(cell.text)
+            for i, cell in enumerate(row.find_all('td')[1:]): 
+                data_row.extend(self.__split_columns(i, cell.text))
+            if len(data_row) == 11:
+                data_row[9] = data_row[6]
+                del data_row[6] 
+
+            #SALIDA PARA DEBUG----CHEQUEO LONGITUD Y CONTENIDO    
+            print(len(data_row))    
+            print(data_row,end='\n')
             self.data.append(data_row)
 
     def __write_csv(self, filename):
