@@ -2,7 +2,9 @@ import requests
 import re
 import time
 import csv
+import pandas as pd
 from bs4 import BeautifulSoup
+
 
 
 class WebScraper:
@@ -59,13 +61,13 @@ class WebScraper:
             print(len(data_row))    
             print(data_row,end='\n')
             self.data.append(data_row)
-
+    '''
     def __write_csv(self, filename):
         with open("../data/" + filename, 'w', newline="") as csvfile:
             w = csv.writer(csvfile, delimiter=";", quotechar="|", quoting=csv.QUOTE_MINIMAL)
             for x in self.data:
                 w.writerow(x)
-
+    '''
     def scrape(self, course):
         html = self.__download(self.url + course)
         links = self.__get_links(html)
@@ -77,6 +79,9 @@ class WebScraper:
             self.__scrape_data(bs)
             dt = time.time() - t
             time.sleep(10 * dt)
-
-        self.__write_csv("dades" + course + ".csv")
+        
+        labels = ['SSTT','especialitat','Inicials', 'Bloc', 'n_interi','data_ini', 'tipus_jornada','i_especialitat', 'centre','data_fi']
+        df = pd.DataFrame.from_records(self.data, columns=labels)
+        return (df)
+        #self.__write_csv("dades" + course + ".csv")
 
