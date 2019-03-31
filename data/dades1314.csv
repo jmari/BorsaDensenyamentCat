@@ -1,15 +1,16 @@
+SSTT;especialitat;Inicials;Bloc;n_interi;data_ini;tipus_jornada;i_especialitat;centre;data_fi
 1;133;DR,A;;1.410;25/07;193;08062158;1;31/08
 1;133;GC,TM;;7.320;25/07;AN;08013159;1;31/08
 1;133;RS,JR;;7.470;25/07;193;08053443;1;31/08
 1;133;FE,D;;7.520;25/07;AL;08031873;1;31/08
 1;133;BR,MM;;17.790;25/07;AL;08063746;1;31/08
-1;133;IG;;25.700;29/08/;133;EOI -  Guinardó (Barcelona);0,50;31/08
+1;133;IG;;25.700;29/08/;133;EOI -  GuinardÃ³ (Barcelona);0,50;31/08
 1;133;VS,C;;56.020;25/07;SCO;08055440;1;31/08
 1;133;UMB;;80.050;09/09/;133;EOI -  de Barcelona (Barcelona);0,8666;30/06
 1;133;MRLA;;88.060;14/02/;AN;Institut -  Jaume Balmes (Barcelona);0,8666;28/02
 1;133;;;88.060;dif;dif;;;
 1;133;;;106.400;;;;;
-1;133;MAMP;;124.600;17/09/;133;EOI -  Vallès Oriental (Granollers);0,4266;30/06
+1;133;MAMP;;124.600;17/09/;133;EOI -  VallÃ¨s Oriental (Granollers);0,4266;30/06
 1;133;LMB;;126.020;09/09/;133;EOI -  Barcelona III (Barcelona);0,4266;30/06
 1;133;;;138.200;;;;;
 1;133;JPP;;183.580;09/09/;133;EOI -  Barcelona IV (Barcelona);0,33;30/06
@@ -41,7 +42,7 @@
 3;133;SCE;;139.650;10/09/;AL;Institut -  Marianao (Sant Boi de Llobregat);0,8666;30/06
 3;133;;;175.090;dif;dif;;;
 3;133;SLE;;206.110;30/08/;133;EOI -  de Martorell (Martorell);0,50;31/08
-3;133;TRM;;218.260;11/10/;133;EOI -  del Maresme (Mataró);0,4266;21/10
-3;133;TRM;;218.260;10/12/;193;EOI -  de Cornell�  de Llobregat (Cornell�  de Llobregat);0,4266;31/01
+3;133;TRM;;218.260;11/10/;133;EOI -  del Maresme (MatarÃ³);0,4266;21/10
+3;133;TRM;;218.260;10/12/;193;EOI -  de CornellÃ  de Llobregat (CornellÃ  de Llobregat);0,4266;31/01
 3;133;TRM;;218.260;04/02/;193;EOI -  del Prat de Llobregat (El Prat de Llobregat);0,50;28/02
 3;133;TRM;;218.260;18/03/;AN;Institut -  Torre Roja (Viladecans);0,8666;28/03
