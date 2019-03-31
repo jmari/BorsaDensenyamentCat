@@ -80,7 +80,7 @@ class WebScraper:
             dt = time.time() - t
             time.sleep(10 * dt)
         
-        labels = ['SSTT','especialitat','Inicials', 'Bloc', 'n_interi','data_ini', 'tipus_jornada','i_especialitat', 'centre','data_fi']
+        labels = ['SSTT','especialitat','Inicials', 'Bloc', 'n_interi','data_ini','i_especialitat', 'centre','tipus_jornada','data_fi']
         df = pd.DataFrame.from_records(self.data, columns=labels)
         return (df)
         #self.__write_csv("dades" + course + ".csv")
