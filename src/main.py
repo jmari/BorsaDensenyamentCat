@@ -5,11 +5,11 @@ import os
 ws = WebScraper()
 
 # Indicar el curs a capturar entre 1314 i 1819
-course = "1819"
+course = "1314"
 
 outname = "dades" + course + ".csv"
 
-outdir = './data'
+outdir = '../data'
 if not os.path.exists(outdir):
     os.mkdir(outdir)
 course_file = os.path.join(outdir, outname)    
