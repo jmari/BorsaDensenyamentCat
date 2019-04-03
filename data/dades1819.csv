@@ -1,50 +1,50 @@
-bloc;centre;codi_centre;data_fi;data_ini;especialitat;especialitat_dest;inicials;n_interi;sstt;tipus_jornada
-1;EOI Barcelona-Vall d'Hebron;;31/08;17/07;133;193;DR,A;77;1;1
-1;EOI Santa Coloma;;31/08;17/07;133;133;FE,D;562;1;1
-1;EOI Barcelona IV;;31/08;17/07;133;133;G,I;2.556;1;0,5
-1;EOI de Martorell;;31/08;17/07;133;133;LA,MR;10.013;1;1
-1;Institut Arnau Cadell;;31/08;17/07;133;AN;MP,MA;10.453;1;1
-1;EOI de Viladecans;;31/08;17/07;133;133;MB,L;12.481;1;1
-1;Institut La Pineda;;31/08;17/07;133;AL;GG,M;14.737;1;1
-1;Institut de Castellar;;31/08;17/07;133;AN;VC,J;16.030;1;1
-1;Institut Icària;;31/08;17/07;133;AL;MODL,I;16.567;1;1
-1;Institut Ausiàs March;;31/08;17/07;133;AL;VG,E;19.312;1;0,5
-1;EOI Guinardó;;31/08;17/07;133;133;PS,T;22.075;1;0,5
-1;;;;;133;;PP,J;23.341;1;
-1;;;;;133;;SS,M;25.299;1;
-1;EOI d'Olot;;31/08;17/07;133;133;B,A;25.347;1;0,5
-1;;;;;133;;BSJ,H;36.238;1;
-1;;;;;133;;TY,E;36.304;1;
-1;;;;;133;;LL,S;36.353;1;
-2;;;;;133;;BG,A;47.955;1;
-2;EOI Barcelona III;;31/08;14/09;133;133;SJ,M;53.935;1;0,50
-2;EOI de Manresa;;07/12;17/09;133;133;PC,M;71.340;1;
-2;EOI Martorell;;21/12;06/11;133;133;GQ,G;73.165;1;
-2;EOI Vallès Oriental;;30/06;03/10;133;133;EO,D;73.538;1;
-1;Institut Ernest Lluch i Martí;;31/08;17/07;133;AN;AS,MI;2.309;2;1
-1;EOI de L'Hospitalet de LLobregat;;31/08;17/07;133;193;AG,JM;12.889;2;1
-1;EOI Vallès Oriental;;31/08;17/07;133;133;RM,AP;16.599;2;1
-1;Institut Rubió i Ors;;31/08;17/07;133;AL;GS,A;18.153;2;1
-1;Institut Xaloc;;31/08;17/07;133;AL;BM,B;19.690;2;1
-1;EOI Blanes;;30/06;13/09;133;133;PG,MD;23.265;2;
-1;;;;;133;;HB,A;31.670;2;
-1;Institut La Pineda;;28/02;15/02;133;AL;MM,S;34.713;2;1
-2;EOI de L'Hospitalet de LLobregat;;26/11;13/11;133;133;VA,LA;51.568;2;1
-1;EOI de Martorell;;31/08;17/07;133;133;TG,AI;2.345;3;1
-1;Institut Frederic Mompou;;31/08;17/07;133;AN;GF,MD;3.529;3;1
-1;EOI del Prat de Llobregat;;31/08;17/07;133;133;VS,C;4.721;3;1
-1;Institut Frederic Mompou;;31/08;17/07;133;FR;BC,A;7.271;3;1
-1;EOI de Cornellà de Llobregat;;31/08;17/07;133;133;EA,MG;7.979;3;1
-1;Institut Joan Miró;;31/08;17/07;133;AL;CE,S;8.244;3;1
-1;Institut Josefina Castellví i Piulachs;;31/08;17/07;133;AN;LE,S;15.571;3;1
-1;EOI de Manresa;;31/08;17/07;133;133;MR,AM;16.704;3;1
-1;Institut Daniel Blanxart i Pedrals;;31/08;17/07;133;AN;RM,T;17.565;3;1
-1;EOI de Viladecans;;31/08;17/07;133;133;RC,E;18.609;3;1
-1;;;;;133;;AH,Y;24.109;3;
-1;EOI de Martorell;;31/08;17/07;133;133;P,K;24.394;3;0,5
-1;EOI de Viladecans;;31/08;17/07;133;193;AB,D;26.577;3;0,5
-1;EOI de Cornellà;;30/06;18/09;133;133;AB,D;26.577;3;
-1;EOI de Martorell;;30/06;12/09;133;133;CC,MB;30.621;3;0,50
-1;EOI del Prat de Llobregat;;30/06;26/09;133;133;CC,MB;30.621;3;
-1;Institut Giola;;31/08;17/07;133;AL;CV,M;30.870;3;1
-2;Institut El Castell;;31/08;10/09;133;MU;MV,L;70.813;3;
+bloc;centre;codi_centre;curs;data_fi;data_ini;especialitat;especialitat_dest;inicials;n_interi;sstt;tipus_jornada
+1;EOI Barcelona-Vall d'Hebron;;1819;31/08;17/07;133;193;DR,A;77;1;1
+1;EOI Santa Coloma;;1819;31/08;17/07;133;133;FE,D;562;1;1
+1;EOI Barcelona IV;;1819;31/08;17/07;133;133;G,I;2.556;1;0,5
+1;EOI de Martorell;;1819;31/08;17/07;133;133;LA,MR;10.013;1;1
+1;Institut Arnau Cadell;;1819;31/08;17/07;133;AN;MP,MA;10.453;1;1
+1;EOI de Viladecans;;1819;31/08;17/07;133;133;MB,L;12.481;1;1
+1;Institut La Pineda;;1819;31/08;17/07;133;AL;GG,M;14.737;1;1
+1;Institut de Castellar;;1819;31/08;17/07;133;AN;VC,J;16.030;1;1
+1;Institut Icària;;1819;31/08;17/07;133;AL;MODL,I;16.567;1;1
+1;Institut Ausiàs March;;1819;31/08;17/07;133;AL;VG,E;19.312;1;0,5
+1;EOI Guinardó;;1819;31/08;17/07;133;133;PS,T;22.075;1;0,5
+1;;;1819;;;133;;PP,J;23.341;1;
+1;;;1819;;;133;;SS,M;25.299;1;
+1;EOI d'Olot;;1819;31/08;17/07;133;133;B,A;25.347;1;0,5
+1;;;1819;;;133;;BSJ,H;36.238;1;
+1;;;1819;;;133;;TY,E;36.304;1;
+1;;;1819;;;133;;LL,S;36.353;1;
+2;;;1819;;;133;;BG,A;47.955;1;
+2;EOI Barcelona III;;1819;31/08;14/09;133;133;SJ,M;53.935;1;0,50
+2;EOI de Manresa;;1819;07/12;17/09;133;133;PC,M;71.340;1;
+2;EOI Martorell;;1819;21/12;06/11;133;133;GQ,G;73.165;1;
+2;EOI Vallès Oriental;;1819;30/06;03/10;133;133;EO,D;73.538;1;
+1;Institut Ernest Lluch i Martí;;1819;31/08;17/07;133;AN;AS,MI;2.309;2;1
+1;EOI de L'Hospitalet de LLobregat;;1819;31/08;17/07;133;193;AG,JM;12.889;2;1
+1;EOI Vallès Oriental;;1819;31/08;17/07;133;133;RM,AP;16.599;2;1
+1;Institut Rubió i Ors;;1819;31/08;17/07;133;AL;GS,A;18.153;2;1
+1;Institut Xaloc;;1819;31/08;17/07;133;AL;BM,B;19.690;2;1
+1;EOI Blanes;;1819;30/06;13/09;133;133;PG,MD;23.265;2;
+1;;;1819;;;133;;HB,A;31.670;2;
+1;Institut La Pineda;;1819;28/02;15/02;133;AL;MM,S;34.713;2;1
+2;EOI de L'Hospitalet de LLobregat;;1819;26/11;13/11;133;133;VA,LA;51.568;2;1
+1;EOI de Martorell;;1819;31/08;17/07;133;133;TG,AI;2.345;3;1
+1;Institut Frederic Mompou;;1819;31/08;17/07;133;AN;GF,MD;3.529;3;1
+1;EOI del Prat de Llobregat;;1819;31/08;17/07;133;133;VS,C;4.721;3;1
+1;Institut Frederic Mompou;;1819;31/08;17/07;133;FR;BC,A;7.271;3;1
+1;EOI de Cornellà de Llobregat;;1819;31/08;17/07;133;133;EA,MG;7.979;3;1
+1;Institut Joan Miró;;1819;31/08;17/07;133;AL;CE,S;8.244;3;1
+1;Institut Josefina Castellví i Piulachs;;1819;31/08;17/07;133;AN;LE,S;15.571;3;1
+1;EOI de Manresa;;1819;31/08;17/07;133;133;MR,AM;16.704;3;1
+1;Institut Daniel Blanxart i Pedrals;;1819;31/08;17/07;133;AN;RM,T;17.565;3;1
+1;EOI de Viladecans;;1819;31/08;17/07;133;133;RC,E;18.609;3;1
+1;;;1819;;;133;;AH,Y;24.109;3;
+1;EOI de Martorell;;1819;31/08;17/07;133;133;P,K;24.394;3;0,5
+1;EOI de Viladecans;;1819;31/08;17/07;133;193;AB,D;26.577;3;0,5
+1;EOI de Cornellà;;1819;30/06;18/09;133;133;AB,D;26.577;3;
+1;EOI de Martorell;;1819;30/06;12/09;133;133;CC,MB;30.621;3;0,50
+1;EOI del Prat de Llobregat;;1819;30/06;26/09;133;133;CC,MB;30.621;3;
+1;Institut Giola;;1819;31/08;17/07;133;AL;CV,M;30.870;3;1
+2;Institut El Castell;;1819;31/08;10/09;133;MU;MV,L;70.813;3;

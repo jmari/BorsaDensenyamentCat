@@ -1,0 +1,148 @@
+bloc;centre;codi_centre;curs;data_fi;data_ini;especialitat;especialitat_dest;inicials;n_interi;sstt;tipus_jornada
+;;08062158;1314;31/08;25/07;133;193;DR,A;1.410;1;1
+;;08013159;1314;31/08;25/07;133;AN;GC,TM;7.320;1;1
+;;08053443;1314;31/08;25/07;133;193;RS,JR;7.470;1;1
+;;08031873;1314;31/08;25/07;133;AL;FE,D;7.520;1;1
+;;08063746;1314;31/08;25/07;133;AL;BR,MM;17.790;1;1
+;EOI -  GuinardÃ³ (Barcelona);;1314;31/08;29/08/;133;133;IG;25.700;1;0,50
+;;08055440;1314;31/08;25/07;133;SCO;VS,C;56.020;1;1
+;EOI -  de Barcelona (Barcelona);;1314;30/06;09/09/;133;133;UMB;80.050;1;0,8666
+;Institut -  Jaume Balmes (Barcelona);;1314;28/02;14/02/;133;AN;MRLA;88.060;1;0,8666
+;;;1314;;dif;133;dif;;88.060;1;
+;;;1314;;;133;;;106.400;1;
+;EOI -  VallÃ¨s Oriental (Granollers);;1314;30/06;17/09/;133;133;MAMP;124.600;1;0,4266
+;EOI -  Barcelona III (Barcelona);;1314;30/06;09/09/;133;133;LMB;126.020;1;0,4266
+;;;1314;;;133;;;138.200;1;
+;EOI -  Barcelona IV (Barcelona);;1314;30/06;09/09/;133;133;JPP;183.580;1;0,33
+;EOI -  Barcelona III (Barcelona);;1314;30/09;13/09/;133;133;JVC;197.840;1;0,7066
+;;;1314;;;133;;;206.870;1;
+;EOI -  de Barcelona (Barcelona);;1314;17/01;07/01/;133;133;TPS;210.770;1;0,8666
+;;;1314;;;133;;;213.770;1;
+;;;1314;;;133;;;218.660;1;
+;;;1314;;;133;;;418.130;1;
+;;;1314;;;133;;;431.260;1;
+;;;1314;;;133;;;439.810;1;
+;;;1314;;;133;;;441.320;1;
+;;;1314;;;133;;;601.050;1;
+; Institut Vidreres Vidreres Fase d'elecciÃ³ GE - Geografia i histÃ²ria;17006824;1415;;23/07/;133;GE;GR,B;1.200;1;1
+;;;1415;;;133;;;6.860;1;
+; Institut de L'ArboÃ§ L'ArboÃ§ Fase 1.4.2: Proposta continuÃ¯tat interins LC - Llengua catalana i literatura;43007580;1415;;23/07/;133;LC;PC,MC;6.910;1;1
+;Institut -  Frederic MartÃ­ i Carreras (Palafrugell);;1415;31/08;28/08/;133;DI;MMC;16.580;1;1
+; Escola Mogent MontornÃ¨s del VallÃ¨s Fase d'elecciÃ³ PEF - EducaciÃ³ fÃ­sica;08059792;1415;;23/07/;133;PEF;ST,E;25.390;1;1
+; CFA Miquel MartÃ­ i Pol Vic Fase 1.2.1. Proposta lloc especÃ­fic estruct. SCO - Ãmbit de la comunicaciÃ³;08060095;1415;;23/07/;133;SCO;RF,J;26.130;1;1
+;Institut -  AusiÃ s March (Barcelona);;1415;31/08;31/08/;133;AL;AITG;26.130;1;0,50
+; Institut Ramon Coll i RodÃ©s Lloret de Mar Fase 1.3. Proposta lloc especÃ­fic temporal ADC - Aula d'acollida;17005911;1415;;23/07/;133;ADC;BV,M;52.850;1;1
+; Institut Ramon Coll i RodÃ©s Lloret de Mar Fase 1.4.4: Proposta continuÃ¯tat 0,5 dedica. DI - Dibuix;17005911;1415;;23/07/;133;DI;AL,G;106.890;1;0,50
+;EOI -  de Barcelona (Barcelona);;1415;31/08;31/08/;133;133;BCPC;106.890;1;0,50
+;Institut -  Vall d'Hebron (Barcelona);;1415;31/08;28/08/;133;AN;MPRR;109.890;1;0,50
+;ZER -  La Font de l'AiguadÃ­ (Rasquera);;1415;22/10;10/09/;133;PMU;BMCS;120.170;1;0,8666
+;ZER -  Ports-Algars (Arnes);;1415;23/12;21/11/;133;PMU;BMCS;120.170;1;0,8666
+;Escola -  Sant Ãngel (Camarles);;1415;09/02;03/02/;133;PRI;BMCS;120.170;1;1
+;Escola -  Soriano Montagut (Amposta);;1415;22/05;05/05/;133;PRI;BMCS;120.170;1;1
+;ZER -  Riu i Serra (Benifallet);;1415;11/06;29/05/;133;PMU;BMCS;120.170;1;0,83
+;ZER -  Ports-Algars (Arnes);;1415;19/06;09/06/;133;PMU;BMCS;120.170;1;1
+;Escola -  Sant Joan (Benavent de SegriÃ );;1415;17/10;16/09/;133;PEF;ABB;124.350;1;0,8666
+;Escola -  Sant Miquel (Miralcamp);;1415;30/10;21/10/;133;PEF;ABB;124.350;1;0,8666
+;Escola -  Enric Farreny (Lleida);;1415;19/12;25/11/;133;PRI;ABB;124.350;1;0,8666
+;Escola -  Santa Maria de Gardeny (Lleida);;1415;30/01;20/01/;133;PRI;ABB;124.350;1;1
+;Escola -  Joc de la Bola (Lleida);;1415;27/03;03/03/;133;PEF;ABB;124.350;1;1
+;Escola -  Joan Maragall (La Llagosta);;1415;15/05;09/09/;133;PEF;THL;163.320;1;0,33
+;Escola -  El Viver (Montcada i Reixac);;1415;10/10;03/10/;133;PRI;ALA;178.740;1;0,8666
+; Institut Valldemossa Barcelona Fase 1.4.4: Proposta continuÃ¯tat 0,5 dedica. CN - Biologia i geologia;08031812;1415;;23/07/;133;CN;PR,O;191.610;1;0,50
+;Institut -  Eugeni d'Ors (Vilafranca del PenedÃ¨s);;1415;30/06;28/10/;133;PSI;EPB;193.750;1;0,33
+;Institut -  IcÃ ria (Barcelona);;1415;31/08;31/08/;133;AL;IMOL;193.750;1;0,50
+;;;1415;;;133;;;218.900;1;
+;Institut -  La Llauna (Badalona);;1415;27/10;17/10/;133;FR;MCSE;220.590;1;0,8666
+;;;1415;;;133;;;236.370;1;
+;;;1415;;;133;;;238.610;1;
+;;;1415;;;133;;;253.290;1;
+;;;1415;;;133;;;560.140;1;
+; EOI de Martorell;08062158;1516;;27/07/;133;193;DR,A;1.200;1;1
+; EOI Santa Coloma;08053443;1516;;27/07/;133;193;RS,JR;6.860;1;1
+; EOI GuinardÃ³;08072589;1516;;27/07/;133;133;FE,D;6.910;1;1
+; EOI GuinardÃ³;08072589;1516;;27/07/;133;133;BR,MM;16.580;1;1
+;EOI -  Barcelona IV (Barcelona);;1516;30/06;22/09/;133;133;IG;25.390;1;0,33
+;Institut -  AusiÃ s March (Barcelona);;1516;31/08;31/08/;133;AL;AITG;26.130;1;0,50
+; EOI del Prat de Llobregat;08060538;1516;;27/07/;133;133;VS,C;52.850;1;1
+;EOI -  de Barcelona (Barcelona);;1516;31/08;31/08/;133;133;BCPC;106.890;1;0,50
+;EOI -  de Barcelona (Barcelona);;1516;15/10;25/09/;133;133;MRLA;109.890;1;1
+; Institut Francisco de Goya;08052724;1516;;27/07/;133;AN;MP,MA;120.170;1;1
+;EOI -  de Barcelona (Barcelona);;1516;15/10;25/09/;133;133;LMB;124.350;1;1
+;EOI -  Barcelona-Vall d'Hebron (Barcelona);;1516;19/02;29/01/;133;133;LMB;124.350;1;1
+;EOI -  de Barcelona (Barcelona);;1516;23/06;05/04/;133;133;LMB;124.350;1;1
+;Institut -  La Sedeta (Barcelona);;1516;30/10;10/09/;133;AL;MGG;163.320;1;1
+;EOI -  Barcelona IV (Barcelona);;1516;27/11;30/10/;133;133;JVC;178.740;1;1
+;;;1516;;;133;;;182.570;1;
+;EOI -  Barcelona III (Barcelona);;1516;30/06;25/09/;133;133;TPS;191.610;1;0,33
+;Institut -  IcÃ ria (Barcelona);;1516;31/08;31/08/;133;AL;IMOL;193.750;1;0,50
+;;;1516;;;133;;;218.900;1;
+;Institut -  Infanta Isabel d'AragÃ³ (Barcelona);;1516;15/11;16/10/;133;AL;MDPG;220.590;1;1
+;Institut -  Eugeni d'Ors (Vilafranca del PenedÃ¨s);;1516;30/06;09/09/;133;AN;GMT;238.610;1;0,50
+;I. d'Auro;;1516;;03/09/;133;;CSD;253.290;1;
+;;;1516;;;133;;;560.140;1;
+;;;1516;;;133;;;700.000;1;
+;;;1516;;;133;;;700.240;1;
+;EOI Barcelona III (Barcelona);08061725;1617;31/08;27/07;133;133;DR,A;1.090;1;j1
+;EOI Guinardó (Barcelona);08072589;1617;31/08;27/07;133;133;FE,D;6.480;1;j1
+;EOI Guinardó (Barcelona);08072589;1617;31/08;27/07;133;133;BR,MM;15.960;1;j1
+;EOI -  Barcelona IV (Barcelona);;1617;30/06;23/09/;133;133;IG;26.300;1;0,83
+;EOI del Prat de Llobregat (El Prat de Llobregat);08060538;1617;31/08;27/07;133;133;VS,C;51.620;1;j1
+;EOI de Barcelona (Barcelona);08038570;1617;31/08;27/07;133;133;PC,BC;104.100;1;mitja
+;EOI -  de Barcelona (Barcelona);;1617;31/08;31/08/;133;133;MRLA;111.660;1;1
+;Institut Arnau Cadell (Sant Cugat del Vallès);08031873;1617;31/08;27/07;133;AN;MP,MA;116.940;1;j1
+;;;1617;;;133;;;137.760;1;
+;;;1617;;;133;;;162.090;1;
+;Institut de Castellar (Castellar del Vallès);08046682;1617;31/08;27/07;133;AN;VC,J;180.730;1;j1
+;Institut Icària (Barcelona);08040141;1617;31/08;27/07;133;AL;MOL,I;186.920;1;mitja
+;;;1617;;;133;;;189.180;1;
+;Institut Ausiàs March (Barcelona);08013172;1617;31/08;27/07;133;AL;VG,E;223.890;1;mitja
+;EOI de Blanes;;1617;31/08;05/09/;133;133;SD,C;235.910;1;
+;;;1617;;;133;;;544.110;1;
+;EOI -  Barcelona III (Barcelona);;1617;15/03;14/02/;133;133;ETY;544.340;1;0,33
+;;;1617;;;133;;;547.290;1;
+;;;1617;;;133;;;700.350;1;
+1;;08062161;1718;31/08;26/07/;133;193;DR,A;94;1;1
+1;;08072589;1718;31/08;26/07/;133;133;FERNANDEZESTRADA,DOLORES;603;1;1
+1;;08066887;1718;31/08;26/07/;133;133;BR,MM;1.524;1;1
+1;;08062195;1718;31/08;26/07/;133;133;G,I;2.689;1;mitja
+1;;08060538;1718;31/08;26/07/;133;133;VS,C;5.032;1;1
+1;;08038570;1718;31/08;26/07/;133;133;PC,BC;10.157;1;mitja
+1;;08062158;1718;31/08;26/07/;133;133;LA,MR;10.930;1;1
+1;;08031873;1718;31/08;26/07/;133;AN;MP,MA;11.410;1;1
+1;EOI -  Barcelona-Vall d'Hebron (Barcelona);;1718;31/08;22/09/;133;133;MB,L;13.542;1;0,50
+1;;08001421;1718;31/08;26/07/;133;AL;GG,M;16.154;1;1
+1;;08046682;1718;31/08;26/07/;133;AN;VC,J;17.604;1;1
+1;;08040141;1718;31/08;26/07/;133;AL;MOL,I;18.195;1;mitja
+1;EOI - de Barcelona (Barcelona);;1718;17/11;27/10/;133;133;PS,T;21.068;1;1
+1;EOI - Barcelona-Vall d'Hebron (Barcelona);;1718;20/03;09/03/;133;133;PS,T;21.068;1;1
+1;;08013172;1718;31/08;26/07/;133;AL;VG,E;21.349;1;mitja
+1;;;1718;;;133;;GR,C;23.776;1;
+1;EOI Viladecans;;1718;30/06;06/09/;133;133;B,A;27.928;1;
+1;EOI -  Barcelona III (Barcelona);;1718;20/11;22/09/;133;133;GL,I;27.934;1;0,33
+1;;08072607;1718;31/08;26/07/;133;133;VG,A;28.001;1;mitja
+1;;08074070;1718;31/08;26/07/;133;133;SS,M;28.335;1;mitja
+1;;;1718;;;133;;TY,E;31.494;1;
+2;;;1718;;;133;;BG,A;48.645;1;
+2;;;1718;;;133;;VA,LA;57.483;1;
+1;EOI Barcelona-Vall d'Hebron;;1819;31/08;17/07;133;193;DR,A;77;1;1
+1;EOI Santa Coloma;;1819;31/08;17/07;133;133;FE,D;562;1;1
+1;EOI Barcelona IV;;1819;31/08;17/07;133;133;G,I;2.556;1;0,5
+1;EOI de Martorell;;1819;31/08;17/07;133;133;LA,MR;10.013;1;1
+1;Institut Arnau Cadell;;1819;31/08;17/07;133;AN;MP,MA;10.453;1;1
+1;EOI de Viladecans;;1819;31/08;17/07;133;133;MB,L;12.481;1;1
+1;Institut La Pineda;;1819;31/08;17/07;133;AL;GG,M;14.737;1;1
+1;Institut de Castellar;;1819;31/08;17/07;133;AN;VC,J;16.030;1;1
+1;Institut Icària;;1819;31/08;17/07;133;AL;MODL,I;16.567;1;1
+1;Institut Ausiàs March;;1819;31/08;17/07;133;AL;VG,E;19.312;1;0,5
+1;EOI Guinardó;;1819;31/08;17/07;133;133;PS,T;22.075;1;0,5
+1;;;1819;;;133;;PP,J;23.341;1;
+1;;;1819;;;133;;SS,M;25.299;1;
+1;EOI d'Olot;;1819;31/08;17/07;133;133;B,A;25.347;1;0,5
+1;;;1819;;;133;;BSJ,H;36.238;1;
+1;;;1819;;;133;;TY,E;36.304;1;
+1;;;1819;;;133;;LL,S;36.353;1;
+2;;;1819;;;133;;BG,A;47.955;1;
+2;EOI Barcelona III;;1819;31/08;14/09;133;133;SJ,M;53.935;1;0,50
+2;EOI de Manresa;;1819;07/12;17/09;133;133;PC,M;71.340;1;
+2;EOI Martorell;;1819;21/12;06/11;133;133;GQ,G;73.165;1;
+2;EOI Vallès Oriental;;1819;30/06;03/10;133;133;EO,D;73.538;1;

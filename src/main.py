@@ -1,18 +1,13 @@
 from scraper import WebScraper
-from pandas import DataFrame
-import os
+import pandas as pd
 
-ws = WebScraper()
+# Indicar el curs a capturar entre 1314 i 1819. "ALL" per a tots.
+course = "ALL"
 
-# Indicar el curs a capturar entre 1314 i 1819
-course = "1314"
+ws = WebScraper(course)
 
-outname = "dades" + course + ".csv"
+ws.scrape()
+ws.write_csv()
 
-outdir = '../data'
-if not os.path.exists(outdir):
-    os.mkdir(outdir)
-course_file = os.path.join(outdir, outname)    
-
-df = ws.scrape(course)
-df.to_csv(course_file, index=False,header=True,sep=';')
+pd.set_option('display.max_columns', None)
+print(ws.get_data())
