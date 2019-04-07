@@ -25,7 +25,7 @@ class WebScraper:
         'especialitat': ct.NullTransformer(), 
         'inicials': ct.NullTransformer(), 
         'bloc': ct.IntTransformer(), 
-        'n_interi': ct.IntTransformer().canNotBeNone(), 
+        'n_interi': ct.IntTransformer().cannotBeNone(), 
         'data_ini': ct.DateTransformer(),
         'especialitat_dest': ct.NullTransformer(), 
         'codi_centre': ct.IntTransformer(), 

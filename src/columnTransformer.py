@@ -12,7 +12,7 @@ class NullTransformer:
         self.column_name=col_name
         return (self)
     
-    def canNotBeNone(self):
+    def cannotBeNone(self):
         self.canBeNone = False
         return (self)
     
