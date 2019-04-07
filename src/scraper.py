@@ -4,7 +4,7 @@ import time
 import os
 import pandas as pd
 from bs4 import BeautifulSoup
-
+import columnTransformer as ct
 
 
 class WebScraper:
@@ -18,6 +18,21 @@ class WebScraper:
                    'tipus_jornada', 'especialitat_dest', 'centre', 'data_fi']
     LABELS = ['curs','sstt', 'especialitat', 'inicials', 'bloc', 'n_interi', 'data_ini',
               'especialitat_dest', 'codi_centre', 'centre', 'tipus_jornada', 'data_fi']
+
+    COL_TRANSFORMER_MAP = {
+        'curs': ct.NullTransformer() ,
+        'sstt': ct.NullTransformer(), 
+        'especialitat': ct.NullTransformer(), 
+        'inicials': ct.NullTransformer(), 
+        'bloc': ct.IntTransformer(), 
+        'n_interi': ct.IntTransformer().canNotBeNone(), 
+        'data_ini': ct.DateTransformer(),
+        'especialitat_dest': ct.NullTransformer(), 
+        'codi_centre': ct.IntTransformer(), 
+        'centre':ct.NullTransformer(), 
+        'tipus_jornada': ct.TipusJornadaTransformer(), 
+        'data_fi': ct.DateTransformer()}
+
 
     def __init__(self, course):
         self.data = pd.DataFrame(columns=self.LABELS)
@@ -60,6 +75,23 @@ class WebScraper:
 
         return df
 
+    def __complete_date(self,raw_date,year):
+        # Completa la data afegint l'any, si troba "dif" canvia per 01/01 
+        try:
+            year = '20'+ year
+            splited_date = raw_date.split('/')
+            processed_date = (splited_date[0] +'/'+ splited_date[1] + '/'+ year)
+        except:
+            processed_date = '01/01/'+year
+        return processed_date
+
+    def __transform_data(self):
+        #Transformació de les dades
+        row_transformer = ct.RowTransformer(self.data,self.COL_TRANSFORMER_MAP)
+        self.data['data_ini'] = self.data['data_ini'].apply(lambda x: self.__complete_date(x,self.course[0:2]))
+        self.data['data_fi'] = self.data['data_fi'].apply(lambda x: self.__complete_date(x,self.course[2:]))
+        self.data = row_transformer.transform()
+
     def __scrape_data(self, bs):
         titles = bs.find_all('h1')
         title = titles[1].text.split("-")
@@ -82,6 +114,9 @@ class WebScraper:
                 df = self.__extract_codi_centre(df)
 
             self.data = pd.concat([self.data,df],0, ignore_index=True, sort=True)
+        self.__transform_data()
+
+
 
     def __scrape_course(self):
         html = self.__download(self.URL + self.course)
