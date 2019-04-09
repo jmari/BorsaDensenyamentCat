@@ -2,7 +2,7 @@ from scraper import WebScraper
 import pandas as pd
 
 # Indicar el curs a capturar entre 1314 i 1819. "ALL" per a tots.
-course = "ALL"
+course = "1819"
 
 ws = WebScraper(course)
 

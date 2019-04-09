@@ -4,6 +4,7 @@ import time
 import os
 import pandas as pd
 from bs4 import BeautifulSoup
+from urllib import robotparser
 import columnTransformer as ct
 
 
@@ -37,12 +38,19 @@ class WebScraper:
     def __init__(self, course):
         self.data = pd.DataFrame(columns=self.LABELS)
         self.course = course
+        self.rp = robotparser.RobotFileParser()
+        self.rp.set_url("http://sindicat.net/robots.txt")
+        self.rp.read()
 
     def __download(self, url):
-        print("Downloading", url, "...")
-        r = requests.get(url)
-
-        return r.text
+        if self.rp.can_fetch("*", url):
+            print("Downloading", url, "...")
+            user_agent = {"User-agent":"UOCScraper"}
+            r = requests.get(url, headers = user_agent)
+            return r.text
+        else:
+            print("Download", url, "disallowed by robots.txt")
+            return ""
 
     def __get_links(self, html):
         bs = BeautifulSoup(html, "html.parser")
@@ -122,7 +130,7 @@ class WebScraper:
         html = self.__download(self.URL + self.course)
         links = self.__get_links(html)
 
-        for link in links[0:1]:  # Per capturar tots els enllaços treure l'slicing
+        for link in links[0:2]:  # Per capturar tots els enllaços treure l'slicing
             t = time.time()
             html = self.__download(link)
             bs = BeautifulSoup(html, "html.parser")
