@@ -5,7 +5,7 @@ import os
 import pandas as pd
 from bs4 import BeautifulSoup
 from urllib import robotparser
-import columnTransformer as ct
+import columnFilter as ct
 
 
 class WebScraper:
@@ -21,18 +21,18 @@ class WebScraper:
               'especialitat_dest', 'codi_centre', 'centre', 'tipus_jornada', 'data_fi']
 
     COL_TRANSFORMER_MAP = {
-        'curs': ct.NullTransformer() ,
-        'sstt': ct.NullTransformer(), 
-        'especialitat': ct.NullTransformer(), 
-        'inicials': ct.NullTransformer(), 
-        'bloc': ct.IntTransformer(), 
-        'n_interi': ct.IntTransformer().cannotBeNone(), 
-        'data_ini': ct.DateTransformer(),
-        'especialitat_dest': ct.NullTransformer(), 
-        'codi_centre': ct.IntTransformer(), 
-        'centre':ct.NullTransformer(), 
-        'tipus_jornada': ct.TipusJornadaTransformer(), 
-        'data_fi': ct.DateTransformer()}
+        'curs': ct.NullFilter() ,
+        'sstt': ct.NullFilter(), 
+        'especialitat': ct.NullFilter(), 
+        'inicials': ct.NullFilter(), 
+        'bloc': [ct.NullFilter(), ct.IntFilter()], #test de llista de filtres 
+        'n_interi': ct.IntFilter().cannotBeNone(), 
+        'data_ini': ct.DateFilter(),
+        'especialitat_dest': ct.NullFilter(), 
+        'codi_centre': ct.IntFilter(), 
+        'centre':ct.NullFilter(), 
+        'tipus_jornada': ct.TipusJornadaFilter(), 
+        'data_fi': ct.DateFilter()}
 
 
     def __init__(self, course):

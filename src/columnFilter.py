@@ -1,7 +1,7 @@
 from datetime import date
 import re
 
-class NullTransformer:
+class NullFilter:
    
     def __init__(self,col_name=''):
         self.canBeNone = True
@@ -26,10 +26,10 @@ class NullTransformer:
     
 
 
-class DateTransformer(NullTransformer):
+class DateFilter(NullFilter):
     #Filtre per a les columnes amb dates, s'ha d'indicar l'any 
     def __init__(self):
-        super(DateTransformer, self).__init__()
+        super(DateFilter, self).__init__()
         self.transform_function = self.__transform_date
 
     def __transform_date(self, raw_date):
@@ -38,10 +38,10 @@ class DateTransformer(NullTransformer):
         return(transformed_date)
 
 
-class IntTransformer(NullTransformer):
+class IntFilter(NullFilter):
     #Filtre per a les columnes amb enters, neteja tots els caracters no vàlids
     def __init__(self):
-        super(IntTransformer, self).__init__()
+        super(IntFilter, self).__init__()
         self.transform_function = self.__transform_integer
     
     def __transform_integer(self, raw_integer):
@@ -51,10 +51,10 @@ class IntTransformer(NullTransformer):
             return(None)
 
 
-class TipusJornadaTransformer(NullTransformer):
+class TipusJornadaFilter(NullFilter):
     #Filtre per a la columna tipus_jornada, normalment és un float, però apareixen textes com ara mitja...
     def __init__(self):
-        super(TipusJornadaTransformer, self).__init__()
+        super(TipusJornadaFilter, self).__init__()
         self.transform_function = self.__transform_tipus_jornada
 
     def __transform_tipus_jornada(self, raw_tipus_jornada):
@@ -64,7 +64,7 @@ class TipusJornadaTransformer(NullTransformer):
         try:
             tipus_jornada = float(tr_tipus_jornada)
         except:
-            print('error transformant columna tipus_jornada amb valor: ' + tr_tipus_jornada+ ' per defecte 1')
+            print('error filtrant columna tipus_jornada amb valor: ' + tr_tipus_jornada+ ' per defecte 1')
             tipus_jornada = 1.0
         return (tipus_jornada)
         
@@ -75,10 +75,22 @@ class RowTransformer:
         self.dataframe = dataframe
         self.col_trf_map = col_trf_map
 
+    def __apply_all_filters(self, raw_data,col_name, list_of_filters):
+        filtered_data = raw_data
+        for filter in list_of_filters:
+            filter.setColumnName(col_name)
+            filtered_data =  filter.transform(filtered_data)
+        return (filtered_data)
+
     def transform(self):
         #transforma el dataframe i el retorna transformat
-        for col, transformer in self.col_trf_map.items():
-            transformer.setColumnName(col)
-            self.dataframe[col] = self.dataframe[col].apply(lambda x:transformer.transform(x))
+        for col, filter in self.col_trf_map.items():
+            #filter pot ser un filtre o una llista de filtres
+            if type(filter) is list:
+                self.dataframe[col] = self.dataframe[col].apply(lambda x:self.__apply_all_filters(x,col, filter))
+            else:
+                filter.setColumnName(col)
+                self.dataframe[col] = self.dataframe[col].apply(lambda x:filter.transform(x))
+
         return (self.dataframe)
             
