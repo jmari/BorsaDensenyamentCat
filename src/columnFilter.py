@@ -33,9 +33,9 @@ class DateFilter(NullFilter):
         self.transform_function = self.__transform_date
 
     def __transform_date(self, raw_date):
-        splited_date = raw_date.split('/')
-        transformed_date = date(int(splited_date[2]),int(splited_date[1]),int(splited_date[0]))
-        return(transformed_date)
+        #splited_date = raw_date.split('/')
+        #transformed_date = date(int(splited_date[2]),int(splited_date[1]),int(splited_date[0]))
+        return(raw_date)
 
 
 class IntFilter(NullFilter):
