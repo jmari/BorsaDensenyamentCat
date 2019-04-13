@@ -37,10 +37,10 @@ class NullFilter:
 
 
 
-class DataFilter(NullFilter):
-    #Filtre per a les columnes amb dates, obté l'any de la columna curs
+class DataFilterIni(NullFilter):
+    #Filtre per a les columnes amb dates d'inici, obté l'any de la columna curs
     def __init__(self):
-        super(DataFilter, self).__init__()
+        super(DataFilterIni, self).__init__()
         self.transform_function = self.__transform_date
 
     def __transform_date(self, raw_date):
@@ -51,6 +51,21 @@ class DataFilter(NullFilter):
             year = "20" + self.current_row['curs'][2:]
         transformed_date = date(int(year),int(splited_date[1]),int(splited_date[0]))
         return(transformed_date)
+
+
+class DataFilterFi(NullFilter):
+    # Filtre per a les columnes amb dates de finalització, obté l'any de la columna curs
+    def __init__(self):
+        super(DataFilterFi, self).__init__()
+        self.transform_function = self.__transform_date
+
+    def __transform_date(self, raw_date):
+        splited_date = raw_date.split('/')
+        year = "20" + self.current_row['curs'][0:2]
+        if splited_date[1] in ["01","02","03","04","05","06","07","08"]:
+            year = "20" + self.current_row['curs'][2:]
+        transformed_date = date(int(year), int(splited_date[1]), int(splited_date[0]))
+        return (transformed_date)
 
 
 class IntFilter(NullFilter):

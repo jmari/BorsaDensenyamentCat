@@ -36,12 +36,12 @@ class WebScraper:
         'inicials': ct.NullFilter(), 
         'bloc': [ct.NullFilter(), ct.IntFilter()], #test de llista de filtres 
         'n_interi': ct.IntFilter().cannotBeNone(), 
-        'data_ini': ct.DataFilter(),
+        'data_ini': ct.DataFilterIni(),
         'especialitat_dest': ct.NullFilter(), 
         'codi_centre': ct.IntFilter(), 
         'centre':ct.NullFilter(), 
         'tipus_jornada': ct.TipusJornadaFilter(), 
-        'data_fi': ct.DataFilter()}
+        'data_fi': ct.DataFilterFi()}
 
 
     def __init__(self, course):

@@ -19,7 +19,7 @@ Per a la realització de la pràctica s'ha utilitzat Python 3 amb les llibreries
 
 ## Dataset
 El conjunt de dades està format per 6 datasets corresponents a les dades de cada curs escolar entre 2013 i 2019. 
-Aquests datasets es troben a la carpeta _data_ en format CSV i s'anomenen _dadesyyYY.csv_, on yy és l'any d'inici de curs i YY l'any de finalització (per exemple dades1819.csv conté les dades del curs 2018-2019). 
+Aquests datasets es troben a la carpeta _data_ en format CSV i s'anomenen _dadesyyYY.csv_, on yy és l'any d'inici de curs i YY l'any de finalització (per exemple _dades1819.csv_ conté les dades del curs 2018-2019). 
 A més, el codi també permet capturar totes les dades en un únic dataset anomenat _dadesALL.csv_ que engloba la informació de tots els cursos.
 Cada dataset conté un registre per a cada professor que opta a un lloc de treball per a una especialitat concreta a un servei territorial. 
 Cada registre conté informació sobre el curs, el número de la borsa que identifica al treballador, l'especialitat demanada i el servei territorial preferent. 
@@ -33,12 +33,12 @@ Cada fitxer conté 12 camps descrits a continuació:
 * **inicials** (*string*). Inicials del professor. Tres lletres, per exemple CC, N.
 * **bloc** (*integer*). Indica el bloc de la borsa de què forma part el professor (1 si ha treballat anteriorment al Departament i 2 si no ha treballat mai).
 * **n_interi** (*integer*). Número d'ordre de tot el professorat a la borsa de treball en funció del temps treballat.
-* **data_ini** (*date*). Data d'incorporació al centre en format dd/mm/yyyy.
+* **data_ini** (*date*). Data d'incorporació al centre en format yyyy-mm-dd.
 * **especialitat_dest** (*string*). Codi de l'especialitat docent per a la qual ha sigut nomenat un professor (2 o 3 dígits).
 * **codi_centre** (*integer*). Codi de 8 xifres que identifica a cada centre de manera única.
 * **centre** (*string*). Nom del centre de treball de l'adjudicació.
 * **tipus_jornada** (*float*). Durada de la jornada de treball adjudicada (1 sencera, 0'5 mitja, 0'33 terç...).
-* **data_fi** (*date*). Data de finalització del nomenament en format dd/mm/yyyy.
+* **data_fi** (*date*). Data de finalització del nomenament en format yyyy-mm-dd.
 
 
 ## Recursos
