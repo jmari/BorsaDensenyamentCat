@@ -173,8 +173,8 @@ class WebScraper:
             except Exception as e:
                 print("excepcio extraient data del link " +link +" " + str(e))
 
-            print ("Esperant: " + str(2*dt)  )
-            time.sleep(2 * dt)  # Temps d'espera per evitar sobrecarregar el servidor
+            print ("Esperant: " + str(dt)  )
+            time.sleep(dt)  # Temps d'espera per evitar sobrecarregar el servidor
 
 
     def scrape(self):

@@ -29,13 +29,13 @@ class NullFilter:
  
     def transform(self, raw_val):
         if not self.canBeNone and (raw_val is None or not raw_val):
-            raise Exception('{} should not be None'.format(self.column_name))
+            raise Exception('{} no pot ser None'.format(self.column_name))
         if raw_val is None or not raw_val:
             return (raw_val)
         try:
             return (self.transform_function(raw_val))
         except:
-            print('error filtrant columna: '+ self.column_name+'am valor:' + str(raw_val))
+            print('error filtrant columna: '+ self.column_name+' amb valor:' + str(raw_val))
             return None
 
 class PointPerBarFilter(NullFilter):
@@ -102,7 +102,7 @@ class TipusJornadaFilter(NullFilter):
         try:
             tipus_jornada = float(tr_tipus_jornada)
         except:
-            print('error filtrant columna tipus_jornada amb valor: ' + tr_tipus_jornada+ ' per defecte 1')
+            print('error filtrant columna: tipus_jornada amb valor: ' + tr_tipus_jornada+ ' per defecte 1')
             tipus_jornada = 1.0
         return (tipus_jornada)
         
@@ -112,7 +112,7 @@ class RowTransformer:
     # Classe per a netejar i transformar els dataframes. Al constructor li passem el df
     # a més d'un diccionari amb columna:instancia de filtre que anirá aplicant a tots els valors
     # a la instancia de filtre li podem passar una llista de filtres per aplicar succesivament
-    
+
     def __init__(self, dataframe, col_trf_map):
         self.dataframe = dataframe
         self.col_trf_map = col_trf_map
