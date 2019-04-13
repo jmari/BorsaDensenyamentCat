@@ -111,9 +111,9 @@ class WebScraper:
             if splited_date[1] in ["01","02","03","04","05","06"]:
                 year = "20" + course[2:]
             processed_date = (splited_date[0] +'/'+ splited_date[1] + '/'+ year)
+            return processed_date
         except:
-            processed_date = None
-        return processed_date
+            return None
 
     def __complete_date_fi(self,raw_date,course):
         # Completa la data de finalització afegint l'any
@@ -124,9 +124,9 @@ class WebScraper:
             if splited_date[1] in ["09","10","11","12"]:
                 year = "20" + course[0:2]
             processed_date = (splited_date[0] +'/'+ splited_date[1] + '/'+ year)
+            return processed_date
         except:
-            processed_date = None
-        return processed_date
+            return None
 
     def __transform_data(self):
         #Transformació de les dades
@@ -162,7 +162,7 @@ class WebScraper:
                 df = pd.DataFrame(data=[data_row], columns=self.LABELS_OLD)
                 df = self.__extract_codi_centre(df)
 
-            self.data = pd.concat([self.data,df],0, ignore_index=True, sort=True)
+            self.data = pd.concat([self.data,df],0, ignore_index=True, sort=False)
         self.__transform_data()
 
 
@@ -175,13 +175,13 @@ class WebScraper:
         links = self.__get_links(html)
 
         # Recorre tots els enllaços i en captura el contingut
-        for link in links[0:3]:  # Per capturar tots els enllaços treure l'slicing
+        for link in links[0:5]:  # Per capturar tots els enllaços treure l'slicing
             t = time.time()
             html = self.__download(link)  # descarrega la URL
+            dt = time.time() - t
             bs = BeautifulSoup(html, "html.parser")  # parseja el contingut
             self.__scrape_data(bs)  # Captura les dades
-            dt = time.time() - t
-            time.sleep(10 * dt)  # Temps d'espera per evitar sobrecarregar el servidor
+            time.sleep(2 * dt)  # Temps d'espera per evitar sobrecarregar el servidor
 
     def scrape(self):
         # Mètode públic que rastreja les dades del curs especificat a la classe
@@ -197,12 +197,13 @@ class WebScraper:
 
     def get_data(self):
         # Permet obtenir el contingut de l'atribut data
-        # Retorna totes les dades capturades en un datafram
+        # Retorna totes les dades capturades en un dataframe
 
         return self.data
 
     def write_csv(self):
         # Guarda les dades en un fitxer CSV
+
         outname = "dades" + self.course + ".csv"
         outdir = '../data'
 
