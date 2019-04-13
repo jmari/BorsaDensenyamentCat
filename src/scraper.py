@@ -43,6 +43,8 @@ class WebScraper:
         'tipus_jornada': ct.TipusJornadaFilter(), 
         'data_fi': ct.DataFilterFi()}
 
+    # Maxim nombre d'intents de descarrega
+    MAX_DOWNLOAD_ERROR = 10
 
     def __init__(self, course):
         # dataframe que emmagatzema les dades capturades
@@ -56,6 +58,9 @@ class WebScraper:
         self.rp.set_url("http://sindicat.net/robots.txt")
         self.rp.read()
 
+        # Si la descarrega falla torna a intentar fins a MAX_DOWNLOAD_ERRORS
+        self.download_errors = 0
+
     def __download(self, url):
         # Descarrega una pàgina a partir de la URL
         # retorna un string amb el codi html
@@ -63,7 +68,17 @@ class WebScraper:
         if self.rp.can_fetch("*", url):  # Comprova el fitxer robots.txt
             print("Downloading", url, "...")
             user_agent = {"User-agent":"UOCScraper"}
-            r = requests.get(url, headers = user_agent)
+            try:
+                r = requests.get(url, headers = user_agent)
+                self.download_errors = 0
+            except:
+                self.download_errors += 1
+                if self.download_errors < self.MAX_DOWNLOAD_ERROR:
+                    print ("Esperant 20s per connexió"  )
+                    time.sleep(20.0)
+                    return (self.__download(url))
+                else:
+                    raise Exception('Superat maxim intents de descarrega')
             return r.text
         else:
             print("Download", url, "disallowed by robots.txt")
@@ -147,7 +162,7 @@ class WebScraper:
         links = self.__get_links(html)
 
         # Recorre tots els enllaços i en captura el contingut
-        for link in links[0:5]:  # Per capturar tots els enllaços treure l'slicing
+        for link in links: # [0:5]:  Per capturar tots els enllaços treure l'slicing
             t = time.time()
             html = self.__download(link)  # descarrega la URL
             dt = time.time() - t
