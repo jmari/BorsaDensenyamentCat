@@ -35,7 +35,14 @@ class NullFilter:
             print('error filtrant columna: '+ self.column_name+'am valor:' + str(raw_val))
             return None
 
-
+class PointPerBarFilter(NullFilter):
+    #Filtre per a les columnes amb dates canvia format dd.mm per dd/mm
+    def __init__(self):
+        super(PointPerBarFilter, self).__init__()
+        self.transform_function = self.__transform_date
+    def __transform_date(self, raw_date):
+        return (raw_date.replace(".","/"))
+         
 
 class DataFilterIni(NullFilter):
     #Filtre per a les columnes amb dates d'inici, obté l'any de la columna curs

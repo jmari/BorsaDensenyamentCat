@@ -34,17 +34,17 @@ class WebScraper:
         'sstt': ct.NullFilter(), 
         'especialitat': ct.NullFilter(), 
         'inicials': ct.NullFilter(), 
-        'bloc': [ct.NullFilter(), ct.IntFilter()], #test de llista de filtres 
+        'bloc': ct.IntFilter(), #test de llista de filtres 
         'n_interi': ct.IntFilter().cannotBeNone(), 
-        'data_ini': ct.DataFilterIni(),
+        'data_ini': [ct.PointPerBarFilter(), ct.DataFilterIni()],
         'especialitat_dest': ct.NullFilter(), 
         'codi_centre': ct.IntFilter(), 
         'centre':ct.NullFilter(), 
         'tipus_jornada': ct.TipusJornadaFilter(), 
-        'data_fi': ct.DataFilterFi()}
+        'data_fi': [ct.PointPerBarFilter(), ct.DataFilterIni()]}
 
     # Maxim nombre d'intents de descarrega
-    MAX_DOWNLOAD_ERROR = 10
+    MAX_DOWNLOAD_ERROR = 3
 
     def __init__(self, course):
         # dataframe que emmagatzema les dades capturades
@@ -74,8 +74,8 @@ class WebScraper:
             except:
                 self.download_errors += 1
                 if self.download_errors < self.MAX_DOWNLOAD_ERROR:
-                    print ("Esperant 20s per connexió"  )
-                    time.sleep(20.0)
+                    print ("Esperant 10s per connexió"  )
+                    time.sleep(10.0)
                     return (self.__download(url))
                 else:
                     raise Exception('Superat maxim intents de descarrega')
@@ -163,14 +163,14 @@ class WebScraper:
 
         # Recorre tots els enllaços i en captura el contingut
         for link in links: # [0:5]:  Per capturar tots els enllaços treure l'slicing
-            t = time.time()
-            html = self.__download(link)  # descarrega la URL
-            dt = time.time() - t
-            bs = BeautifulSoup(html, "html.parser")  # parseja el contingut 
             try:
+                t = time.time()
+                html = self.__download(link)  # descarrega la URL
+                dt = time.time() - t
+                bs = BeautifulSoup(html, "html.parser")  # parseja el contingut 
                 self.__scrape_data(bs)  # Captura les dades
             except Exception as e:
-                print("excepcio extraient data: " + str(e))
+                print("excepcio extraient data del link " +link +" " + str(e))
 
             print ("Esperant: " + str(2*dt)  )
             time.sleep(2 * dt)  # Temps d'espera per evitar sobrecarregar el servidor
