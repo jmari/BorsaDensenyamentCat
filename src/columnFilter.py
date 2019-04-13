@@ -12,14 +12,17 @@ class NullFilter:
         self.transform_function = lambda x: x 
 
     def setColumnName(self, col_name):
+        # nom de la column, la classe rowTransformer inicialitza el nom abanç d'executar transform
         self.column_name=col_name
         return (self)
 
     def setCurrentRow(self, current_row):
+        # actualitza current_row, la classe rowTransformer inicialitza el current_row abanç d'executar transform
         self.current_row = current_row
         return (self)
     
     def cannotBeNone(self):
+        # Si activem aquesta opcio  i el valor es none o un string buit emetra una Excepcio
         self.canBeNone = False
         return (self)
     
@@ -106,9 +109,10 @@ class TipusJornadaFilter(NullFilter):
 
 
 class RowTransformer:
-    #Classe per a netejar i transformar els dataframes. Al constructor li passem el df
-    #a més d'un diccionari amb columna:instancia de filtre que anirá aplicant a tots els valors
-    #a la instancia de filtre li podem passar una llista de filtres per aplicar succesivament
+    # Classe per a netejar i transformar els dataframes. Al constructor li passem el df
+    # a més d'un diccionari amb columna:instancia de filtre que anirá aplicant a tots els valors
+    # a la instancia de filtre li podem passar una llista de filtres per aplicar succesivament
+    
     def __init__(self, dataframe, col_trf_map):
         self.dataframe = dataframe
         self.col_trf_map = col_trf_map

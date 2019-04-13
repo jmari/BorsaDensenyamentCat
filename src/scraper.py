@@ -189,7 +189,6 @@ class WebScraper:
         else:
             self.__scrape_course()
         
-        #quan el dataframe está complert el neteja
         
 
     def get_data(self):
