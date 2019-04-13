@@ -104,11 +104,10 @@ class WebScraper:
         return df
 
 
-    def __transform_data(self):
+    def __transform_data(self, df):
         #Transformació de les dades
-        print ('Transformant i filtrant dades')
-        row_transformer = ct.RowTransformer(self.data,self.COL_TRANSFORMER_MAP)
-        self.data = row_transformer.transform()
+        row_transformer = ct.RowTransformer(df,self.COL_TRANSFORMER_MAP)
+        return (row_transformer.transform())
 
     def __scrape_data(self, bs):
         # Captura les dades d'una pàgina i les guarda a l'atribut data
@@ -135,10 +134,9 @@ class WebScraper:
             else:
                 df = pd.DataFrame(data=[data_row], columns=self.LABELS_OLD)
                 df = self.__extract_codi_centre(df)
-
-            self.data = pd.concat([self.data,df],0, ignore_index=True, sort=False)
-        
-
+            
+            self.data = pd.concat([self.data,self.__transform_data(df)],0, ignore_index=True, sort=False)
+        print ("Files filtrades i afegides. Les dimensions del DF: "+ str(self.data.shape))    
 
 
     def __scrape_course(self):
@@ -149,13 +147,19 @@ class WebScraper:
         links = self.__get_links(html)
 
         # Recorre tots els enllaços i en captura el contingut
-        for link in links:  # Per capturar tots els enllaços treure l'slicing
+        for link in links[0:5]:  # Per capturar tots els enllaços treure l'slicing
             t = time.time()
             html = self.__download(link)  # descarrega la URL
             dt = time.time() - t
-            bs = BeautifulSoup(html, "html.parser")  # parseja el contingut
-            self.__scrape_data(bs)  # Captura les dades
+            bs = BeautifulSoup(html, "html.parser")  # parseja el contingut 
+            try:
+                self.__scrape_data(bs)  # Captura les dades
+            except Exception as e:
+                print("excepcio extraient data: " + str(e))
+
+            print ("Esperant: " + str(2*dt)  )
             time.sleep(2 * dt)  # Temps d'espera per evitar sobrecarregar el servidor
+
 
     def scrape(self):
         # Mètode públic que rastreja les dades del curs especificat a la classe
@@ -170,7 +174,7 @@ class WebScraper:
             self.__scrape_course()
         
         #quan el dataframe está complert el neteja
-        self.__transform_data()
+        
 
     def get_data(self):
         # Permet obtenir el contingut de l'atribut data
