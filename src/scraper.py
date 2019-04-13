@@ -3,9 +3,10 @@ import re
 import time
 import os
 import pandas as pd
+import columnFilter as ct
 from bs4 import BeautifulSoup
 from urllib import robotparser
-import columnFilter as ct
+
 
 
 class WebScraper:
@@ -35,12 +36,12 @@ class WebScraper:
         'inicials': ct.NullFilter(), 
         'bloc': [ct.NullFilter(), ct.IntFilter()], #test de llista de filtres 
         'n_interi': ct.IntFilter().cannotBeNone(), 
-        'data_ini': ct.DateFilter(),
+        'data_ini': ct.DataFilter(),
         'especialitat_dest': ct.NullFilter(), 
         'codi_centre': ct.IntFilter(), 
         'centre':ct.NullFilter(), 
         'tipus_jornada': ct.TipusJornadaFilter(), 
-        'data_fi': ct.DateFilter()}
+        'data_fi': ct.DataFilter()}
 
 
     def __init__(self, course):
@@ -102,38 +103,11 @@ class WebScraper:
             df['centre'] = p.sub('',centre)
         return df
 
-    def __complete_date_ini(self,raw_date,course):
-        # Completa la data d'inici afegint l'any
-
-        try:
-            year = "20" + course[0:2]
-            splited_date = raw_date.split('/')
-            if splited_date[1] in ["01","02","03","04","05","06"]:
-                year = "20" + course[2:]
-            processed_date = (splited_date[0] +'/'+ splited_date[1] + '/'+ year)
-            return processed_date
-        except:
-            return None
-
-    def __complete_date_fi(self,raw_date,course):
-        # Completa la data de finalització afegint l'any
-
-        try:
-            year = "20" + course[2:]
-            splited_date = raw_date.split('/')
-            if splited_date[1] in ["09","10","11","12"]:
-                year = "20" + course[0:2]
-            processed_date = (splited_date[0] +'/'+ splited_date[1] + '/'+ year)
-            return processed_date
-        except:
-            return None
 
     def __transform_data(self):
         #Transformació de les dades
-
+        print ('Transformant i filtrant dades')
         row_transformer = ct.RowTransformer(self.data,self.COL_TRANSFORMER_MAP)
-        self.data['data_ini'] = self.data['data_ini'].apply(lambda x: self.__complete_date_ini(x,self.course))
-        self.data['data_fi'] = self.data['data_fi'].apply(lambda x: self.__complete_date_fi(x,self.course))
         self.data = row_transformer.transform()
 
     def __scrape_data(self, bs):
@@ -163,7 +137,7 @@ class WebScraper:
                 df = self.__extract_codi_centre(df)
 
             self.data = pd.concat([self.data,df],0, ignore_index=True, sort=False)
-        self.__transform_data()
+        
 
 
 
@@ -175,7 +149,7 @@ class WebScraper:
         links = self.__get_links(html)
 
         # Recorre tots els enllaços i en captura el contingut
-        for link in links[0:5]:  # Per capturar tots els enllaços treure l'slicing
+        for link in links:  # Per capturar tots els enllaços treure l'slicing
             t = time.time()
             html = self.__download(link)  # descarrega la URL
             dt = time.time() - t
@@ -194,6 +168,9 @@ class WebScraper:
             self.course = "ALL"
         else:
             self.__scrape_course()
+        
+        #quan el dataframe está complert el neteja
+        self.__transform_data()
 
     def get_data(self):
         # Permet obtenir el contingut de l'atribut data
