@@ -78,7 +78,8 @@ class WebScraper:
                     time.sleep(10.0)
                     return (self.__download(url))
                 else:
-                    raise Exception('Superat maxim intents de descarrega')
+                    self.download_errors = 0
+                    raise Exception("Superat maxim nombre d'intents de descarrega")
             return r.text
         else:
             print("Download", url, "disallowed by robots.txt")
