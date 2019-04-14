@@ -8,7 +8,6 @@ from bs4 import BeautifulSoup
 from urllib import robotparser
 
 
-
 class WebScraper:
     # Enllaç base de les pàgines a rastrejar
     URL = "http://sindicat.net/borsa/"
@@ -46,6 +45,7 @@ class WebScraper:
     # Maxim nombre d'intents de descarrega
     MAX_DOWNLOAD_ERROR = 3
 
+    
     def __init__(self, course):
         # dataframe que emmagatzema les dades capturades
         self.data = pd.DataFrame(columns=self.LABELS)
@@ -91,10 +91,9 @@ class WebScraper:
 
         bs = BeautifulSoup(html, "html.parser")
         nodes_a = bs.find_all('a')
-       
         links = []
         for node in nodes_a:
-            if '/ctot.php?e' in node['href']:
+            if '/ctot.php?e' in node['href']:  # els enllaços al contingut tenen 'ctot.php' a la URL
                 links.append(node['href'])
         return links
 
@@ -112,13 +111,12 @@ class WebScraper:
     def __extract_codi_centre(self, df):
         # Extreu el codi de centre del camp "centre"
 
-        p = re.compile('[0-9]{8}')
+        p = re.compile('[0-9]{8}')  # El codi de centre és un nombre de 8 dígits
         centre = df['centre'].values[0]
         if p.match(centre):
             df['codi_centre'] = p.findall(centre)[0]
             df['centre'] = p.sub('',centre)
         return df
-
 
     def __transform_data(self, df):
         #Transformació de les dades
@@ -151,9 +149,9 @@ class WebScraper:
                 df = pd.DataFrame(data=[data_row], columns=self.LABELS_OLD)
                 df = self.__extract_codi_centre(df)
             
+            # Afegeix les dades al dataframe
             self.data = pd.concat([self.data,self.__transform_data(df)],0, ignore_index=True, sort=False)
         print ("Files filtrades i afegides. Les dimensions del DF: "+ str(self.data.shape))    
-
 
     def __scrape_course(self):
         # Captura totes les dades del curs especificat a l'atribut "course"
@@ -163,7 +161,7 @@ class WebScraper:
         links = self.__get_links(html)
 
         # Recorre tots els enllaços i en captura el contingut
-        for link in links: # [0:5]:  Per capturar tots els enllaços treure l'slicing
+        for link in links:
             try:
                 t = time.time()
                 html = self.__download(link)  # descarrega la URL
@@ -176,7 +174,6 @@ class WebScraper:
             print ("Esperant: " + str(dt)  )
             time.sleep(dt)  # Temps d'espera per evitar sobrecarregar el servidor
 
-
     def scrape(self):
         # Mètode públic que rastreja les dades del curs especificat a la classe
 
@@ -187,14 +184,11 @@ class WebScraper:
                 self.__scrape_course()
             self.course = "ALL"
         else:
-            self.__scrape_course()
-        
-        
+            self.__scrape_course()     
 
     def get_data(self):
         # Permet obtenir el contingut de l'atribut data
         # Retorna totes les dades capturades en un dataframe
-
         return self.data
 
     def write_csv(self):
@@ -208,4 +202,3 @@ class WebScraper:
         course_file = os.path.join(outdir, outname)
 
         self.data.to_csv(course_file, index=False, header=True, sep=';')
-
