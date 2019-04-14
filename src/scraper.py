@@ -132,9 +132,9 @@ class WebScraper:
         p = re.compile('SSTT|ESPECIALITAT|:|\s')
         sstt = p.sub('', title[0])
         esp = p.sub('', title[1])
-
         # Captura les dades de la taula
         table = bs.find('table')
+        tmp_data = None
         for row in table.find_all('tr'):
             data_row = [self.course,sstt, esp]
             for i, cell in enumerate(row.find_all('td')[1:]): 
@@ -151,7 +151,10 @@ class WebScraper:
                 df = pd.DataFrame(data=[data_row], columns=self.LABELS_OLD)
                 df = self.__extract_codi_centre(df)         
             # Afegeix les dades al dataframe 
-            tmp_data = pd.concat([self.data,df],0, ignore_index=True, sort=False)
+            if tmp_data is None:
+                tmp_data = df
+            else:
+                tmp_data = pd.concat([tmp_data,df],0, ignore_index=True, sort=False)
 
 
         self.data = pd.concat([self.data,self.__transform_data(tmp_data)],0, ignore_index=True, sort=False)
