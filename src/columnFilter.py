@@ -126,8 +126,9 @@ class RowTransformer:
         return (filtered_data)
 
     def transform(self):
-        #crea un nou dataframe amb l'aplicació dels filtres a cada valor raw
-        new_dataframe = pd.DataFrame(columns=self.dataframe.columns.values, index=self.dataframe.index.values)
+        # crea un nou dataframe amb l'aplicació dels filtres a cada valor raw
+        # el nombre de columnes serà sempre el mateix per a tots els arxius generats
+        new_dataframe = pd.DataFrame(columns=self.col_trf_map.keys(), index=self.dataframe.index.values)
         for index, row in self.dataframe.iterrows():
             new_row = {}
             for col, filter in self.col_trf_map.items():
