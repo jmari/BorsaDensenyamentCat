@@ -44,7 +44,7 @@ class PointPerBarFilter(NullFilter):
         super(PointPerBarFilter, self).__init__()
         self.transform_function = self.__transform_date
     def __transform_date(self, raw_date):
-        return (raw_date.replace(".","/"))
+        return (raw_date.replace(".","/").replace("-","/"))
          
 
 class DataFilterIni(NullFilter):

@@ -149,11 +149,12 @@ class WebScraper:
                 df = pd.DataFrame(data=[data_row], columns=self.LABELS_1618)
             else:
                 df = pd.DataFrame(data=[data_row], columns=self.LABELS_OLD)
-                df = self.__extract_codi_centre(df)
-            
-            # Afegeix les dades al dataframe
-            
-            self.data = pd.concat([self.data,self.__transform_data(df)],0, ignore_index=True, sort=False)
+                df = self.__extract_codi_centre(df)         
+            # Afegeix les dades al dataframe 
+            tmp_data = pd.concat([self.data,df],0, ignore_index=True, sort=False)
+
+
+        self.data = pd.concat([self.data,self.__transform_data(tmp_data)],0, ignore_index=True, sort=False)
         print ("Files filtrades i afegides. Les dimensions del DF: "+ str(self.data.shape))    
 
     def __scrape_course(self):
