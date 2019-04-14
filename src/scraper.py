@@ -139,7 +139,9 @@ class WebScraper:
             data_row = [self.course,sstt, esp]
             for i, cell in enumerate(row.find_all('td')[1:]): 
                 data_row.extend(self.__split_columns(i, cell.text))
-
+            # Hi ha taules amb 13 camps, s'ha d'eliminar el 7tim
+            if len(data_row) > 12:
+                del data_row[7]
             # El nombre i ordre dels camps depenen del curs
             if self.course =='1819':
                 df = pd.DataFrame(data=[data_row], columns=self.LABELS_1819)
@@ -150,6 +152,7 @@ class WebScraper:
                 df = self.__extract_codi_centre(df)
             
             # Afegeix les dades al dataframe
+            
             self.data = pd.concat([self.data,self.__transform_data(df)],0, ignore_index=True, sort=False)
         print ("Files filtrades i afegides. Les dimensions del DF: "+ str(self.data.shape))    
 
